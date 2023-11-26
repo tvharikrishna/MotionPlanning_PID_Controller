@@ -66,8 +66,8 @@ The PID control algorithm is used in various applications, from simple home appl
     • **Inability to Compensate for System Dynamics:** Without an integral component, steady-state errors cannot be corrected, which 
                           could lead to persistent offsets from the desired output.
                           
-    • **Increased Steady-State Error:** PID controllers can be adapted to different systems with appropriate tuning of the P, I, and D parameters. 
-                          They are versatile enough to be used in a wide range of applications and different types of processes.
+    • **Increased Steady-State Error:** PID controllers can be adapted to different systems with appropriate tuning of the PID 
+                          parameters. They are versatile enough to be used in a wide range of applications and different types of processes.
 
     • **Unpredictable System Response:** Without the predictive action of the derivative term, the system may respond in an 
                           unpredictable manner to changing conditions or sudden inputs.
@@ -89,7 +89,7 @@ Using PID controller to steering input, I achieved over 98% accuracy in my path 
 ## My Project Video Demonstration:
 <p align="center">
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7123386910160420864?utm_source=share&utm_medium=member_desktop">
-    <img src="https://img.shields.io/badge/Video- PID Controller in Action-blue" alt="Video"/>
+    <img src="https://img.shields.io/badge/Video- PID Controller w/ ROS in Action-blue" alt="Video"/>
   </a>
 </p>
 
