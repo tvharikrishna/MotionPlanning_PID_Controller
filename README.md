@@ -1,4 +1,8 @@
-# PID Controller w/ ROS Mobile Robot
+<div align="center">
+  <h1>PID Controller w/ ROS Mobile Robot</h1>
+</div>
+
+<br>
 
 <p align="center">
   <img src="data/project_tittle.png" alt="Project Logo Cover" width="1500"/>
@@ -6,7 +10,7 @@
 
 ---------------------------------------------
 
-## What is PID Controller:
+##   ★ What is PID Controller:
 A PID controller is a widely used feedback controller in control systems. PID stands for Proportional, Integral, and Derivative, which are the three basic coefficients used in this controller to maintain the desired output of the system.
 
 Here's what each component does:
@@ -27,7 +31,7 @@ The PID control algorithm is used in various applications, from simple home appl
 
 ---------------------------------------------
 
-## Controller with PID Feedback System:
+##  ★ Controller with PID Feedback System:
     • **Improved Stability:** A PID controller can stabilize a system that might otherwise be unstable. It can be tuned to dampen 
                           oscillations and ensure that the system settles into the desired state more quickly and remains 
                           stable over time.
@@ -53,7 +57,7 @@ The PID control algorithm is used in various applications, from simple home appl
                           
 ---------------------------------------------
 
-## Controller without PID Feedback System:
+##  ★ Controller without PID Feedback System:
     • **No Correction for Disturbances:** Without a feedback control system, a process can be significantly affected by disturbances 
                           or changes in the environment, leading to deviation from the setpoint.
                           
@@ -74,19 +78,19 @@ The PID control algorithm is used in various applications, from simple home appl
 
 ---------------------------------------------
 
-## PID Controller in Action:
+##  ★ PID Controller in Action:
 <p align="center">
   <img src="data/project_logo.png" alt="Project Logo Cover" width="1500"/>
 </p>
 
 ---------------------------------------------
 
-## Testing and Results:
+##  ★ Testing and Results:
 Using PID controller to steering input, I achieved over 98% accuracy in my path tracking tests conducted in ROS. Below is a link where you can view a video demonstrating how precisely the controller follows the designated path.
 
 ---------------------------------------------
 
-## My Project Video Demonstration:
+##  ★ My Project Video Demonstration:
 <p align="center">
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7123386910160420864?utm_source=share&utm_medium=member_desktop">
     <img src="https://img.shields.io/badge/Video- PID Controller w/ ROS in Action-blue" alt="Video"/>
