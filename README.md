@@ -1,76 +1,95 @@
-# PID Controller
+# PID Controller w/ ROS Mobile Robot
 
 <p align="center">
-  <img src="data/project_title.png" alt="Project Logo Cover" width="1500"/>
-</p>
-
----------------------------------------------
-
-## About this Project:
-A Pure Pursuit Controller is a Path Tracking Algorithm often used in robotics and autonomous vehicles for following a predefined path autonomously.
-In autonomous robotics, the ability to follow a predetermined path with accuracy and adaptability is critical. Applications range from industrial robots following lines on a factory floor, drones navigating through an environment, or autonomous cars driving on a road. The Pure Pursuit algorithm's effectiveness has been proven in various fields, including agricultural automation, where vehicles must follow precise paths for tasks like planting or harvesting.
-
-<p align="center">
-  <img src="data/project_logo.png" alt="Project Title" width="1500"/>
+  <img src="data/project_tittle.png" alt="Project Logo Cover" width="1500"/>
 </p>
 
 ---------------------------------------------
 
-## Advantages of Pure Pursuit:
-    • Simplicity: Pure Pursuit is straight forward to understand and implement.
-    • Reactivity: It's a reactive algorithm that can adjust to changes in the robot's position.
-    • Smoothness: It results in smooth paths due to the circular arc-based steering, which is important for applications where jerk or sudden changes.
-    • Versatility: It can be used with different types of robots and vehicles - wheeled robots, drones, and autonomous cars can all use Pure Pursuit for path tracking.
-    • Predictability: The behavior of the PP controller is predictable and reliable, which is essential for safety in autonomous systems.
-    
+## What is PID Controller:
+A PID controller is a widely used feedback controller in control systems. PID stands for Proportional, Integral, and Derivative, which are the three basic coefficients used in this controller to maintain the desired output of the system.
+
+Here's what each component does:
+
+1. **Proportional (P):** This part of the controller reacts to the current error, which is the difference between the desired setpoint and the actual output. The proportional term produces an output that is proportional to the current error. A higher proportional gain will increase the system's responsiveness but can also lead to an unstable system with increased oscillation.
+
+2. **Integral (I):** The integral component sums the past errors over time. If the error has been present for a prolonged period, the integral term increases, applying a stronger action through the controller to eliminate the error. This part is responsible for removing any residual steady-state error that the proportional part leaves behind; however, too much integral action can lead to instability and oscillations as well.
+
+3. **Derivative (D):** This part of the controller responds to the rate of change of the error, attempting to predict future error based on its current rate. It helps to dampen the system, reducing overshoot and improving stability.
+
+<p align="center">
+  <img src="data/pid_diagram.png" alt="Project Title" width="1500"/>
+</p>
+
+The PID controller combines these three components to produce a control signal to drive the system towards its setpoint without oscillation or steady-state error. The exact influence of each component (P, I, and D) is determined by their respective coefficients, which are tuned according to the specific needs of the system being controlled.
+
+The PID control algorithm is used in various applications, from simple home appliances to complex industrial systems, due to its simplicity and robustness. It helps to ensure that the output of a system (like the speed of a motor, the temperature of an oven, the position of a drone, etc.) follows the input command as closely as possible, even in the presence of disturbances or changes in the environment.
+
 ---------------------------------------------
 
-## Working of Pure Pursuit Algorithm:
+## Controller with PID Feedback System:
+    • **Improved Stability:** A PID controller can stabilize a system that might otherwise be unstable. It can be tuned to dampen 
+                          oscillations and ensure that the system settles into the desired state more quickly and remains 
+                          stable over time.
+                          
+    • **Reduced Steady-State Error:** The integral component of a PID controller helps eliminate steady-state error, the persistent 
+                          difference between the system’s output and the desired setpoint, by integrating  the error over time 
+                          and applying a corrective action.
+                                  
+    • **Enhanced Responsiveness:** The proportional term allows the system to respond proportionally to the error. If the system 
+                          drifts from the desired setpoint, the proportional term provides a correction to bring it back, 
+                          improving the responsiveness of the system to changes.
+                               
+    • **Predictive Action:** The derivative term anticipates future errors by calculating the rate of change of the error. 
+                          This predictive action can reduce overshooting and undershooting by applying braking force to the 
+                          system's response, improving the overall control and response time.
+                          
+    • **Adaptability:** PID controllers can be adapted to different systems with appropriate tuning of the P, I, and D parameters. 
+                          They are versatile enough to be used in a wide range of applications and different types of processes.
+
+    • **Simplicity and Cost-effectiveness:** PID controllers are relatively simple to understand and implement, which makes them 
+                          a cost-effective solution for many control problems. They do not require complex mathematics 
+                          or modeling of the system to be controlled.
+                          
+---------------------------------------------
+
+## Controller without PID Feedback System:
+    • **No Correction for Disturbances:** Without a feedback control system, a process can be significantly affected by disturbances 
+                          or changes in the environment, leading to deviation from the setpoint.
+                          
+    • **Oscillations and Instability:** Systems without proper control can oscillate and may not settle at a desired value, 
+                          leading to instability.
+                                  
+    • **Manual Intervention Required:** Without automatic control, manual intervention may be required to adjust the system to reach
+                          and maintain the desired output, which is less efficient and more error-prone.
+                               
+    • **Inability to Compensate for System Dynamics:** Without an integral component, steady-state errors cannot be corrected, which 
+                          could lead to persistent offsets from the desired output.
+                          
+    • **Increased Steady-State Error:** PID controllers can be adapted to different systems with appropriate tuning of the P, I, and D parameters. 
+                          They are versatile enough to be used in a wide range of applications and different types of processes.
+
+    • **Unpredictable System Response:** Without the predictive action of the derivative term, the system may respond in an 
+                          unpredictable manner to changing conditions or sudden inputs.
+
+---------------------------------------------
+
+## PID Controller in Action:
 <p align="center">
-  <img src="data/1.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/2.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/3.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/4.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/5.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/6.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/7.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/8.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/9.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/10.png" alt="Project Logo Cover" width="1500"/>
-</p>
-<p align="center">
-  <img src="data/11.png" alt="Project Logo Cover" width="1500"/>
+  <img src="data/project_logo.png" alt="Project Logo Cover" width="1500"/>
 </p>
 
 ---------------------------------------------
 
 ## Testing and Results:
-By employing a Binary Tree search algorithm for waypoint navigation, I achieved over 98% accuracy in my path tracking tests conducted in ROS. Below is a link where you can view a video demonstrating how precisely the controller follows the designated path.
+Using PID controller to steering input, I achieved over 98% accuracy in my path tracking tests conducted in ROS. Below is a link where you can view a video demonstrating how precisely the controller follows the designated path.
 
 ---------------------------------------------
 
 ## My Project Video Demonstration:
 <p align="center">
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7123386910160420864?utm_source=share&utm_medium=member_desktop">
-    <img src="https://img.shields.io/badge/Video-Pure Pursuit Algorithm in Action-blue" alt="Video"/>
+    <img src="https://img.shields.io/badge/Video- PID Controller in Action-blue" alt="Video"/>
   </a>
 </p>
 
